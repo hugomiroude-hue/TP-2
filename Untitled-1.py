@@ -1,3 +1,6 @@
+import math
+n = 0
+
 """
 #exercice 1
 
@@ -95,8 +98,6 @@ def premiere_occ(ch , c):
         if ch[i: i+b] == c:
             return i
 
-print(premiere_occ("bonjour", "n"))
-
 #exercice 9
 def nb_occ(ch, c):
     compteur = 0
@@ -104,12 +105,11 @@ def nb_occ(ch, c):
         if caractere == c:
             compteur += 1
     return compteur
-print(nb_occ("bonjour", "o"))
 
 #exercice 10
 def sous_chaine(ch1, ch2):
     return (ch1 in ch2) or (ch2 in ch1)
-print(sous_chaine("bon", "bonjour"))
+
 #exercice 12
 def triple_six(ch):
     return nb_occ("666") >= 3
@@ -177,7 +177,6 @@ def carres(n):
     return L
 def carre_comprenant(n):
     return [k * k for k in range(1, n+1)]
-print(carre_comprenant(15))
 #exercice 18
 
 def liste_impairs(n):
@@ -202,3 +201,122 @@ def trois_en_trois(n):
     return [k for k in range(n) if k % 3 == 0]
 
 #exercice 19
+def indices (ch , c) :
+    return  [i for i in range(len(ch)) if ch [i] == c]
+
+#exercice 20
+def sous_liste(L1, L2):
+    return L2 in L1
+
+#exercice 21
+def tous_positifs (L) :
+    for e in L:
+        if e <0:
+            return False
+        
+#exercice 22
+def positifs (L) :
+    c = 0
+    for e in L :
+        if e >= 0:
+            c += 1
+    return c
+
+def rangs_negatifs (L):
+    return [i for i in range(len(L)) if L [i] < 0]
+
+def motif (L) :
+    n = len(L)
+    for k in range(n -1) :
+        if L [k] == 0 and L [k +1] == 0:
+            return True
+    return False
+
+def dix_vingt (L) :
+    for e in L :
+        if e <0 or e >20:
+            return False
+    return True
+
+#exercice 23
+def croissante (L) :
+    n = len(L)
+    for k in range (0 , n -1) :
+        if L [ k ] > L[ k +1]:
+            return False
+    return True
+
+#exercice 24
+def monotone (L) :
+    M = []
+    for e in L :
+        M += [e]
+    return croissante (L) or croissante (M)
+
+#exercice 25
+def suite (n) :
+    L =[1]
+    for i in range(n) :
+        L.append(L[i] ** 2+ i )
+    return L
+
+#exercice 26
+def valeur_absolue (L) :
+    return [abs(L[i]) for i in range(len(L))]
+
+#exercice 27
+def E_et_sigma ( valeurs , proba ) :
+    l = len( valeurs )
+    a = 0
+    b = 0
+    for i in range(n):
+        aE += valeurs[i] * proba[i]
+        b += valeurs[i] ** 2 * proba[i]
+    b -= a ** 2
+    S = math.sqrt(b)
+    return a, S
+
+#exercice 28
+"""
+1) 5 3 3
+2) ['a', 2, 3]
+[1, 2, 3]
+3) [4, 3.14, True]
+[4, 3.14, True]
+4) 
+[0, 0, 0] [[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+[1, 0, 0] [[1,0,0],[1,0,0],[1,0,0],[1,0,0]]
+[1, 0, 0] [[1,0,0],[1,0,0],[2,3,4],[1,0,0]]
+[1, 0, 11] [[1,0,11],[1,0,11],[2,3,4],[1,0,11]]
+[1, 0, 11] [[1,0,11],[1,0,11],[2,'n',4],[1,0,11]]
+5) 
+[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+[[1,0,0],[1,0,0],[1,0,0],[1,0,0]]
+[[1,0,0],[1,0,0],[2,3,4],[1,0,0]]
+[[1,0,11],[1,0,11],[2,3,4],[1,0,11]]
+[[1,0,11],[1,0,11],[2,'n',4],[1,0,11]]
+6)
+[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+[[0,0,0],[1,0,0],[0,0,0],[0,0,0]]
+[[0,0,0],[1,0,0],[2,3,4],[0,0,0]]
+[[0,0,0],[1,0,0],[2,3,4],[0,0,11]]
+[[0,0,0],[1,0,0],[2,'n',4],[0,0,11]]
+
+# exercice 29
+1) pour X = 3 a = 9
+2) pour X = 3 a = 9
+3) pour X = 3 a = 9
+
+"""
+#exercice 30 
+M = [0 , 0 , 0]
+N = 4*[ M]
+print(M , N )
+N [1][0] = 1
+print(M , N )
+N [2] = [2 , 3 , 4]
+print(M , N )
+N [3][2] = 11
+print(M , N )
+N [2][1] = 'n'
+print(M , N )
