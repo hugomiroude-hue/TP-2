@@ -177,30 +177,35 @@ def carres(n):
     return L
 def carre_comprenant(n):
     return [k * k for k in range(1, n+1)]
+<<<<<<< HEAD
+=======
+
+>>>>>>> 543e55d5d417bd5a19ce8ee680e2371358755651
 #exercice 18
 
-def liste_impairs(n):
+def liste_impairs():
     L = []
-    for k in range(n):
+    for k in range(20):
         if k % 2 != 0:
             L.append(k)
     return L
 
-def carres(n):
+def carres():
     L = []
-    for k in range(1, n + 1):
+    for k in range(11):
         L.append(k * k)
     return L
-def carre_comprenant():
-    return [k * k for k in range(1, 11)]
 
-def puissances_2(n):
-    return [2**k for k in range(n)]
 
-def trois_en_trois(n):
-    return [k for k in range(n) if k % 3 == 0]
+def puissances_2():
+    return [2**k for k in range(11)]
+
+def trois_en_trois():
+    return [k for k in range(52) if k % 3 == 0]
+
 
 #exercice 19
+<<<<<<< HEAD
 def indices (ch , c) :
     return  [i for i in range(len(ch)) if ch [i] == c]
 
@@ -320,3 +325,47 @@ N [3][2] = 11
 print(M , N )
 N [2][1] = 'n'
 print(M , N )
+=======
+
+def indices(ch, c):
+    L = []
+    for i in range(len(ch)):
+        if ch[i] == c:
+            L.append(i)
+    return L
+
+#exercice 20
+def sous_liste(L1 ,L2):
+    liste1 = len(L1)
+    liste2 = len(L2)
+    for i in range(liste2 - liste1 + 1):
+        a = 0
+        while a < liste2 and L1[i + a] == L2[a]:
+            a += 1
+        if a == liste1:
+            return True
+        else:
+            return False
+        
+#exercice 21
+
+def tous_positifs(L):
+    for i in L:
+        if i < 0:
+            return False
+        else:
+            return True
+        
+
+#exercice 22
+L = [2, -1, 3, 4, -6, 0, 6]
+def positifs(L):
+    Lpos = []
+    a = 0
+    for i in L:
+        if i >= 0:
+            a += 1
+            Lpos.append(i)
+    return a, Lpos
+print(positifs(L))
+>>>>>>> 543e55d5d417bd5a19ce8ee680e2371358755651
