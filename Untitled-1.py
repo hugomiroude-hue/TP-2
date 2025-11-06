@@ -177,10 +177,7 @@ def carres(n):
     return L
 def carre_comprenant(n):
     return [k * k for k in range(1, n+1)]
-<<<<<<< HEAD
-=======
 
->>>>>>> 543e55d5d417bd5a19ce8ee680e2371358755651
 #exercice 18
 
 def liste_impairs():
@@ -205,7 +202,6 @@ def trois_en_trois():
 
 
 #exercice 19
-<<<<<<< HEAD
 def indices (ch , c) :
     return  [i for i in range(len(ch)) if ch [i] == c]
 
@@ -314,6 +310,7 @@ def E_et_sigma ( valeurs , proba ) :
 
 """
 #exercice 30 
+"""
 M = [0 , 0 , 0]
 N = 4*[ M]
 print(M , N )
@@ -325,47 +322,49 @@ N [3][2] = 11
 print(M , N )
 N [2][1] = 'n'
 print(M , N )
-=======
+"""
+def autre_liste_sans_changer_la_liste():
+    M = [0, 0, 0]
+    N = [M.copy() for i in range(4)]
+    print(M, N)
 
-def indices(ch, c):
-    L = []
-    for i in range(len(ch)):
-        if ch[i] == c:
-            L.append(i)
-    return L
+    N[1][0] = 1
+    print(M, N)
 
-#exercice 20
-def sous_liste(L1 ,L2):
-    liste1 = len(L1)
-    liste2 = len(L2)
-    for i in range(liste2 - liste1 + 1):
-        a = 0
-        while a < liste2 and L1[i + a] == L2[a]:
-            a += 1
-        if a == liste1:
-            return True
-        else:
-            return False
-        
-#exercice 21
+    N[2] = [2, 3, 4]
+    print(M, N)
 
-def tous_positifs(L):
-    for i in L:
-        if i < 0:
-            return False
-        else:
-            return True
-        
+    N[3][2] = 11
+    print(M, N)
 
-#exercice 22
-L = [2, -1, 3, 4, -6, 0, 6]
-def positifs(L):
-    Lpos = []
-    a = 0
-    for i in L:
-        if i >= 0:
-            a += 1
-            Lpos.append(i)
-    return a, Lpos
-print(positifs(L))
->>>>>>> 543e55d5d417bd5a19ce8ee680e2371358755651
+    N[2][1] = 'n'
+    print(M, N)
+
+#exercice 31
+""" 
+# Programme 3
+L = [4 , ’c’, True ]
+N = L
+N [1] = 3.14
+print( L )
+print( N )
+"""
+def autre_liste_sans_changer_la_liste2():
+    L = [4, [1, 2, 3], True]
+    N = [L[0], L[1].copy(), L[2]]
+    N[1][1] = 3.14
+    print(L)
+    print(N)
+
+#exercice 32
+"""il y a pas d'effet de bord car on ne modifie pas la liste initiale L"""
+
+#exercice 33
+def ajout(L, o):
+   return L + [o]
+
+def suppr(L, o):
+    N = [x for x in L if x != o]
+    return N
+
+print(ajout([1, 2, 3, 2, 4], 2))
